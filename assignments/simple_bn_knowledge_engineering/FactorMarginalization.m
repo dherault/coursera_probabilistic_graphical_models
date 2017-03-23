@@ -7,7 +7,7 @@
 %
 %   The resultant factor should have at least one variable remaining or this
 %   function will throw an error.
-% 
+%
 %   See also FactorProduct.m, IndexToAssignment.m, and AssignmentToIndex.m
 
 function B = FactorMarginalization(A, V)
@@ -38,6 +38,11 @@ indxB = AssignmentToIndex(assignments(:, mapB), B.card);
 % YOUR CODE HERE
 % Correctly populate the factor values of B
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    
+% disp(A.val)
+% disp(indxB)
+
+for i=1:size(indxB)
+  B.val(indxB(i)) = B.val(indxB(i)) + A.val(i);
+end;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 end

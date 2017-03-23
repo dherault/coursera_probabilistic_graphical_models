@@ -29,8 +29,8 @@ C.var = union(A.var, B.var);
 % In the code below, we have that
 %
 %   mapA(i) = j, if and only if, A.var(i) == C.var(j)
-% 
-% and similarly 
+%
+% and similarly
 %
 %   mapB(i) = j, if and only if, B.var(i) == C.var(j)
 %
@@ -48,7 +48,7 @@ C.card(mapB) = B.card;
 
 % Initialize the factor values of C:
 %   prod(C.card) is the number of entries in C
-C.val = zeros(1, prod(C.card));
+% C.val = zeros(1, prod(C.card));
 
 % Compute some helper indices
 % These will be very useful for calculating C.val
@@ -61,7 +61,27 @@ indxB = AssignmentToIndex(assignments(:, mapB), B.card);
 % YOUR CODE HERE:
 % Correctly populate the factor values of C
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% disp(C.card)
+% disp(prod(C.card))
+% disp(1:prod(C.card))
+% disp(assignments)
+% disp(mapA)
+% disp(mapB)
+% disp(A.val(1))
+% disp(B.val(1))
+% disp(A.val(1) * B.val(1))
+% disp('.')
+% disp(indxA)
+% disp('.')
+% disp(indxB)
 
+val = [];
+
+for i=1:prod(C.card)
+	val(i) = A.val(indxA(i)) * B.val(indxB(i));
+end;
+
+C.val = val;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 end
