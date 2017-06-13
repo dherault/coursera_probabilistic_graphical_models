@@ -1,8 +1,8 @@
 % This script contains the solutions for the code for some simple examples.
 % There is also a call to each of the functions that you should create that
-% is commented out.  WHEN YOU HAVE FINISHED WRITING A FUNCTION, COMMENT OUT 
-% THE SOLUTION, UNCOMMENT THE CALL TO YOUR CODE, AND USE THIS SCRIPT TO 
-% TO TEST YOUR FUNCTION.  Check that this script runs to completion and 
+% is commented out.  WHEN YOU HAVE FINISHED WRITING A FUNCTION, COMMENT OUT
+% THE SOLUTION, UNCOMMENT THE CALL TO YOUR CODE, AND USE THIS SCRIPT TO
+% TO TEST YOUR FUNCTION.  Check that this script runs to completion and
 % that your answer matches the solution.  Once your function seems to be
 % working, submit it for the unit test.
 
@@ -10,37 +10,47 @@
 isDominant = 1;
 genotypeVar = 1;
 phenotypeVar = 3;
-phenotypeFactor = struct('var', [3,1], 'card', [2,3], 'val', [1,0,1,0,0,1]); % Comment out this line for testing
-% phenotypeFactor = phenotypeGivenGenotypeMendelianFactor(isDominant, genotypeVar, phenotypeVar);
+% phenotypeFactor = struct('var', [3,1], 'card', [2,3], 'val', [1,0,1,0,0,1]) % Comment out this line for testing
+% phenotypeFactor = phenotypeGivenGenotypeMendelianFactor(isDominant, genotypeVar, phenotypeVar)
 
 % Testing phenotypeGivenGenotypeFactor:
 alphaList = [0.8; 0.6; 0.1];
 genotypeVar = 1;
 phenotypeVar = 3;
-phenotypeFactorAlpha = struct('var', [3,1], 'card', [2,3], 'val', [0.8,0.2,0.6,0.4,0.1,0.9]); % Comment out this line for testing
-% phenotypeFactorAlpha = phenotypeGivenGenotypeFactor(alphaList, genotypeVar, phenotypeVar);
+% phenotypeFactorAlpha = struct('var', [3,1], 'card', [2,3], 'val', [0.8,0.2,0.6,0.4,0.1,0.9]) % Comment out this line for testing
+% phenotypeFactorAlpha = phenotypeGivenGenotypeFactor(alphaList, genotypeVar, phenotypeVar)
 
 % Testing genotypeGivenAlleleFreqsFactor:
 alleleFreqs = [0.1; 0.9];
 genotypeVar = 1;
-genotypeFactor = struct('var', [1], 'card', [3], 'val', [0.01,0.18,0.81]); % Comment out this line for testing
-% genotypeFactor = genotypeGivenAlleleFreqsFactor(alleleFreqs, genotypeVar);
+% genotypeFactor = struct('var', [1], 'card', [3], 'val', [0.01,0.18,0.81]) % Comment out this line for testing
+% genotypeFactor = genotypeGivenAlleleFreqsFactor(alleleFreqs, genotypeVar)
 
 % Testing genotypeGivenParentsGenotypesFactor:
 numAlleles = 2;
 genotypeVarChild = 3;
 genotypeVarParentOne = 1;
 genotypeVarParentTwo = 2;
-genotypeFactorPar = struct('var', [3,1,2], 'card', [3,3,3], 'val', [1,0,0,0.5,0.5,0,0,1,0,0.5,0.5,0,0.25,0.5,0.25,0,0.5,0.5,0,1,0,0,0.5,0.5,0,0,1]); % Comment out this line for testing
-% genotypeFactorPar = genotypeGivenParentsGenotypesFactor(numAlleles, genotypeVarChild, genotypeVarParentOne, genotypeVarParentTwo);
+% genotypeFactorPar = struct('var', [3,1,2], 'card', [3,3,3], 'val', [1,0,0,0.5,0.5,0,0,1,0,0.5,0.5,0,0.25,0.5,0.25,0,0.5,0.5,0,1,0,0,0.5,0.5,0,0,1]) % Comment out this line for testing
+% genotypeFactorPar = genotypeGivenParentsGenotypesFactor(numAlleles, genotypeVarChild, genotypeVarParentOne, genotypeVarParentTwo)
 
 % Testing constructGeneticNetwork:
 pedigree = struct('parents', [0,0;1,3;0,0]);
 pedigree.names = {'Ira','James','Robin'};
 alleleFreqs = [0.1; 0.9];
 alphaList = [0.8; 0.6; 0.1];
-sampleFactorList = load('sampleFactorList.mat'); % Comment out this line for testing
+% sampleFactorList = load('sampleFactorList.mat').sampleFactorList; % Comment out this line for testing
+
+% disp(sampleFactorList(1))
+% disp(sampleFactorList(3))
+% disp(sampleFactorList(6))
+
 % sampleFactorList = constructGeneticNetwork(pedigree, alleleFreqs, alphaList);
+
+% disp(sampleFactorList(1))
+% disp(sampleFactorList(3))
+% disp(sampleFactorList(6))
+
 
 % Testing phenotypeGivenCopiesFactor:
 alphaListThree = [0.8; 0.6; 0.1; 0.5; 0.05; 0.01];
